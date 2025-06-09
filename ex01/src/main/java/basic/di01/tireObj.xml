@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tire1" class="basic.di01.KumhoTire"></bean>
+		<bean id="tire2" class="basic.di01.HankooTire"></bean>
+	
+	<bean id="car1" class="basic.di01.Car"></bean>
+</beans>
