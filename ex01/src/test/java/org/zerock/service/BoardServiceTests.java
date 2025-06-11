@@ -1,4 +1,7 @@
-package org.zerock.mapper;
+package org.zerock.service;
+
+
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,54 +9,56 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.mapper.BoardMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
+
 @Log4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-public class BoardMapperTests {
+public class BoardServiceTests {
 	@Setter(onMethod_=@Autowired)
+	private BoardService service;
 	
-	private BoardMapper boardMapper;
-	
-	@Test
-	public void testGetList() {
-		boardMapper.getList().forEach(board->log.info(board));	
-	}
-	
+//	@Test
+//	public void testExist() {
+//		assertNotNull(service);
+//	}
 	
 	@Test
-	public void testInsert() {
+	public void testRegister() {
 		BoardVO board = new BoardVO();
 		board.setTitle("새로작성하는 글");
 		board.setContent("새로 작성하는 내용");
 		board.setWriter("newble");
-		boardMapper.insert(board);
+		service.register(board);
 		
-		log.info(board);
+		log.info("생성된 게시물번호:" + board.getBno());
+		
+	}
+	@Test
+	public void	testGet() {
+		log.info(service.get(1l));
 	}
 	
 	@Test
-	public void testInsertSelectKey() {
-		BoardVO board = new BoardVO();
-		board.setTitle("새로작성하는 글 셀렉트 키");
-		board.setContent("새로 작성하는 내용 셀렉트키");
-		board.setWriter("newble");
-		boardMapper.insertSelectKey(board);
-		
-		log.info(board);
+	public void testGetList() {
+		service.getList().forEach(board->log.info(board));
 	}
 	
 	@Test
-	public void testRead() {
-		BoardVO board = boardMapper.read(6L);
+	public void testUpdate() {
+		BoardVO board = service.get(1L);
+		if(board==null)
+			return;
 		
-		log.info(board);
+		board.setTitle("제목을 변경합니다.");
+		log.info("결과:" +service.modify(board));
 	}
 	
 	@Test
 	public void testDelete() {
-		log.info("Delete Count:"+boardMapper.delete(6L));
+		
 	}
 }

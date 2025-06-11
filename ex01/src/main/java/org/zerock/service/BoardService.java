@@ -7,15 +7,15 @@ import org.zerock.domain.BoardVO;
 
 public interface BoardService {
 
-  public void regist(BoardVO board) throws Exception;
+  public void register(BoardVO board);
 
-  public BoardVO read(Integer bno) throws Exception;
+  public BoardVO get(Long bno);
 
-  public void modify(BoardVO board) throws Exception;
+  public boolean modify(BoardVO board);
 
-  public void remove(Integer bno) throws Exception;
+  public boolean remove(Long bno);
 
-  public List<BoardVO> listAll() throws Exception;
+  public List<BoardVO> getList();
 
  
 
