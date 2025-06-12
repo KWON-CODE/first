@@ -52,13 +52,16 @@ public class BoardServiceTests {
 		BoardVO board = service.get(1L);
 		if(board==null)
 			return;
-		
+		board.setBno(1L);
 		board.setTitle("제목을 변경합니다.");
+		board.setContent("변경된내용");
+		board.setWriter("user100");
+		
 		log.info("결과:" +service.modify(board));
 	}
 	
 	@Test
 	public void testDelete() {
-		
+		log.info("Delete 결과:" + service.remove(3L));
 	}
 }

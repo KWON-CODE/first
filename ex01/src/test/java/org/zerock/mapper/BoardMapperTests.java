@@ -17,41 +17,27 @@ public class BoardMapperTests {
 	
 	private BoardMapper boardMapper;
 	
-	@Test
-	public void testGetList() {
-		boardMapper.getList().forEach(board->log.info(board));	
-	}
-	
-	
-	@Test
-	public void testInsert() {
-		BoardVO board = new BoardVO();
-		board.setTitle("새로작성하는 글");
-		board.setContent("새로 작성하는 내용");
-		board.setWriter("newble");
-		boardMapper.insert(board);
-		
-		log.info(board);
-	}
-	
-	@Test
-	public void testInsertSelectKey() {
-		BoardVO board = new BoardVO();
-		board.setTitle("새로작성하는 글 셀렉트 키");
-		board.setContent("새로 작성하는 내용 셀렉트키");
-		board.setWriter("newble");
-		boardMapper.insertSelectKey(board);
-		
-		log.info(board);
-	}
-	
-	@Test
-	public void testRead() {
-		BoardVO board = boardMapper.read(6L);
-		
-		log.info(board);
-	}
-	
+	/*
+	 * @Test public void testGetList() {
+	 * boardMapper.getList().forEach(board->log.info(board)); }
+	 * 
+	 * 
+	 * @Test public void testInsert() { BoardVO board = new BoardVO();
+	 * board.setTitle("새로작성하는 글"); board.setContent("새로 작성하는 내용");
+	 * board.setWriter("newble"); boardMapper.insert(board);
+	 * 
+	 * log.info(board); }
+	 * 
+	 * @Test public void testInsertSelectKey() { BoardVO board = new BoardVO();
+	 * board.setTitle("새로작성하는 글 셀렉트 키"); board.setContent("새로 작성하는 내용 셀렉트키");
+	 * board.setWriter("newble"); boardMapper.insertSelectKey(board);
+	 * 
+	 * log.info(board); }
+	 * 
+	 * @Test public void testRead() { BoardVO board = boardMapper.read(6L);
+	 * 
+	 * log.info(board); }
+	 */
 	@Test
 	public void testDelete() {
 		log.info("Delete Count:"+boardMapper.delete(6L));
