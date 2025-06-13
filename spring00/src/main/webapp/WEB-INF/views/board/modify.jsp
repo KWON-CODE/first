@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -46,15 +46,15 @@
 					</div>
 
 					<div class="form-group">
-						<label>RegDate</label> <input class="form-control" name='regDate'
+						<label>RegDate</label> <input class="form-control" name='regdate'
 							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.regdate}" />'
 							readonly="readonly">
 					</div>
 
 					<div class="form-group">
-						<label>Update Date</label> <input class="form-control"
-							name='updateDate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updateDate}" />'
+						<label>Update Date</label> <input class="form-control"	
+							name='updatedate'
+							value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updatedate}" />'
 							readonly="readonly">
 					</div>
 
@@ -91,8 +91,10 @@
 
 			} else if (operation === 'list') {
 				//move to list
-				self.location="/board/list";
-				return;
+				//self.location="/board/list";
+				formObj.attr("action","/board/list").attr("method","get")
+				formObj.empty();
+				//return;
 			}
 
 			formObj.submit();

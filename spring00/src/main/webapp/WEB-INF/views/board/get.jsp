@@ -33,10 +33,10 @@
 				</div>
 
 				<button data-oper='modify' class="btn btn-default">
-					<a href="/board/modify?bno=<c:out value="${board.bno}"/>">Modify</a>
+					<a>Modify</a>  <%-- href="/board/modify?bno=<c:out value="${board.bno}"/>" --%>
 				</button>
 				<button data-oper='list' class="btn btn-info">
-					<a href="/board/list">List</a>
+					<a>List</a>  <!-- href="/board/list" a태그 안에 있었는데 modift.jsp에 작성하면서 지움-->
 				</button>
 
 				<form id='operForm' action="/boad/modify" method="get">

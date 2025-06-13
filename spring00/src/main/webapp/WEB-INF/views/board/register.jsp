@@ -26,7 +26,7 @@
 							name="writer">
 					</div>
 					<button type="submit" class="btn btn-default">Submit Button</button>
-					<button type="reset" class="btn  btbn-default">Reset Button</button>
+					<button type="reset"  class="btn btbn-default">Reset Button</button>
 
 				</form>
 			</div>

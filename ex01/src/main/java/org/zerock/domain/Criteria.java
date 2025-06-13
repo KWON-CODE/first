@@ -1,46 +1,27 @@
 package org.zerock.domain;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@ToString
 public class Criteria {
-
-  private int page;
-  private int perPageNum;
-
-  public Criteria() {
-    this.page = 1;
-    this.perPageNum = 10;
-  }
-  public void setPage(int page) {
-
-    if (page <= 0) {
-      this.page = 1;
-      return;
-    }
-    this.page = page;
-  }
-  public void setPerPageNum(int perPageNum) {
-
-    if (perPageNum <= 0 || perPageNum > 100) {
-      this.perPageNum = 10;
-      return;
-    }
-    this.perPageNum = perPageNum;
-  }
-  public int getPage() {
-    return page;
-  }
-  // method for MyBatis SQL Mapper -
-  public int getPageStart() {
-
-    return (this.page - 1) * perPageNum;
-  }
-  // method for MyBatis SQL Mapper
-  public int getPerPageNum() {
-
-    return this.perPageNum;
-  }
-  @Override
-  public String toString() {
-    return "Criteria [page=" + page + ", "
-        + "perPageNum=" + perPageNum + "]";
-  }
+   private int pageNum;
+   private int amount;
+   
+   private String type;
+   private String keyword;
+   public Criteria() {
+      this(1,10);
+   }
+   
+   public Criteria(int pageNum, int amount) {
+      this.pageNum = pageNum;
+      this.amount = amount;
+   }   
+   
+   public String[] getTypeArr() {
+	   return type==null ? new String[]{}: type.split("");
+   }
 }

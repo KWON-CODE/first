@@ -1,51 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
 
-<%@include file="../include/header.jsp"%>
-<!-- Main content -->
-<section class="content">
-	<div class="row">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3 class="box-title">REGISTER BOARD</h3>
-				</div>
-				<!-- /.box-header -->
-				<form role="form" method="post">
-					<div class="box-body">
-						<div class="form-group">
-							<label for="exampleInputEmail1">Title</label> 
-							<input type="text"
-								name='title' class="form-control" placeholder="Enter Title">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Content</label>
-							<textarea class="form-control" name="content" rows="3"
-								placeholder="Enter ..."></textarea>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Writer</label> 
-							<input type="text"
-								name="writer" class="form-control" placeholder="Enter Writer">
-						</div>
+<div class="row">
+	<div class="col-lg-12">
+		<h1>등록화면</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">등록화면</div>
+			<div class="panel-body">
+				<form action="/board/register" method="post" role="form">
+					<div class="form-group">
+						<label>Title</label><input class="form-control" type="text"
+							name="title">
 					</div>
-					<!-- /.box-body -->
-				
-					<div class="box-footer">
-						<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="form-group">
+						<label>Text Area</label>
+						<textarea class="form-control" rows="3" name="content"></textarea>
 					</div>
+					<div class="form-group">
+						<label>Writer</label><input class="form-control" type="text"
+							name="writer">
+					</div>
+					<button type="submit" class="btn btn-default">Submit Button</button>
+					<button type="reset" class="btn  btbn-default">Reset Button</button>
+
 				</form>
 			</div>
-			<!-- /.box -->
 		</div>
-		<!--/.col (left) -->
 	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
+	<!--  -->
 </div>
-<!-- /.content-wrapper -->
-
-<%@include file="../include/footer.jsp"%>
+<!-- row -->
+<%@ include file="../include/footer.jsp"%>

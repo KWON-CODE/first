@@ -1,6 +1,9 @@
 package org.zerock.domain;
 
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -9,7 +12,7 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String writer;
-	private Date regDate;
-	private Date updateDate;
+	@DateTimeFormat(pattern = "yyyy/MM/dd") private Date regDate;
+	@DateTimeFormat(pattern = "yyyy/MM/dd") private Date updateDate;
 	
 }	

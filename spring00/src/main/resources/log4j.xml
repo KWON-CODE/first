@@ -35,13 +35,13 @@
 	</logger>
 
 	<logger name="jdbc.audit">
-		<level value="debug" />
+		<level value="warn" />
 	</logger>
 	<logger name="jdbc.resultset">
-		<level value="info" />
+		<level value="warn" />
 	</logger>
 	<logger name="jdbc.connection">
-		<level value="info" />
+		<level value="warn" />
 	</logger>
 	<logger name="jdbc.sqltiming" additivity="false">
 		<level value="warn" />
